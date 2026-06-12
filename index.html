@@ -8,18 +8,27 @@
   <body style="margin: 0 px; overflow: hidden">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
       <a-marker present="hiro">
-      <a-assets>
-    <img id="gifAnimado" src="Screenshot.gif">
-</a-assets>
+      <a-scene embedded arjs>
 
-<a-plane
-    src="#gifAnimado"
-    width="2"
-    height="2">
-</a-plane>
-      </a-marker>
-      <a-entity camera></a-entity>
-      
+    <a-assets>
+        <video id="videoModa"
+               src="Screenshot.mp4"
+               autoplay
+               loop
+               muted
+               playsinline>
+        </video>
+    </a-assets>
+
+    <a-marker preset="hiro">
+        <a-video
+            src="#videoModa"
+            width="2"
+            height="1.2"
+            position="0 0.5 0">
+        </a-video>
+    </a-marker>
+    <a-entity camera></a-entity>  
     </a-scene>
   </body>
   
