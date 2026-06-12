@@ -8,7 +8,17 @@
   <body style="margin: 0 px; overflow: hidden">
     <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
       <a-marker present="hiro">
-       <a-image src="Screenshot.gif" position="0 0.5 0" rotation="-90 0 0" width="1.6" height="1"></a-image> 
+      <a-scene>
+  <a-assets>
+    <video id="Screenshot" autoplay loop="true" src="Screenshot.mp4"></video>
+  </a-assets>
+
+  <!-- Using the asset management system. -->
+  <a-video src="#Screenshot" width="16" height="9" position="0 0 -20"></a-video>
+
+  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+  <a-video src="airbending.mp4"></a-video>
+</a-scene>
       </a-marker>
       <a-entity camera></a-entity>
       
@@ -16,6 +26,26 @@
   </body>
   
 </html>
+
+
+<!-- <html>
+ <head>
+  <title>Primeira experiência de RA usando Hiro e A-frame</title>
+   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+
+ </head>
+  <body style="margin: 0 px; overflow: hidden">
+    <a-scene vr-mode-ui="enabled: false" embedded arjs="debugUIEnabled: false">
+      <a-marker present="hiro">
+       <a-image src="Screenshot.gif" position="0 0.5 0" rotation="-90 0 0" width="1.6" height="1"></a-image> 
+      </a-marker>
+      <a-entity camera></a-entity>
+      
+    </a-scene>
+  </body>
+  
+</html> -->
 
 
 
